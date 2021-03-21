@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>FuncionarismoPublicoSP_DataWarehouse</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{47aeeecf-636f-4bc0-8f15-2864e63987ef}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>FuncionarismoPublicoSP_DataWarehouse</RootNamespace>
+    <AssemblyName>FuncionarismoPublicoSP_DataWarehouse</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dim\" />
+    <Folder Include="dim\Tables\" />
+    <Folder Include="stg\" />
+    <Folder Include="stg\Tables\" />
+    <Folder Include="fat\" />
+    <Folder Include="fat\Tables\" />
+    <Folder Include="dim\Stored Procedures\" />
+    <Folder Include="fat\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dim\Tables\Sexo.sql" />
+    <Build Include="dim\Tables\CargoBasico.sql" />
+    <Build Include="dim\Tables\Segmento.sql" />
+    <Build Include="dim\Tables\Subgrupo.sql" />
+    <Build Include="dim\Tables\EscolaridadeCargoBasico.sql" />
+    <Build Include="dim\Tables\CargoComissionado.sql" />
+    <Build Include="dim\Tables\Deficiencia.sql" />
+    <Build Include="dim\Tables\Raca.sql" />
+    <Build Include="dim\Tables\Setor.sql" />
+    <Build Include="dim\Tables\Admissao.sql" />
+    <Build Include="dim\Tables\SecretariaPrefeitura.sql" />
+    <Build Include="dim\Tables\Data.sql" />
+    <Build Include="dim\Tables\ReferenciaCargoBasico.sql" />
+    <Build Include="dim\Tables\EscolaridadeCargoComissionado.sql" />
+    <Build Include="dim\Tables\ReferenciaCargoComissionado.sql" />
+    <Build Include="stg\Tables\FuncionariosAtivos.sql" />
+    <Build Include="dim\Tables\Funcionario.sql" />
+    <Build Include="fat\Tables\Contratacao.sql" />
+    <Build Include="dim\Stored Procedures\spLoadCargoBasico.sql" />
+    <Build Include="dim\Stored Procedures\spLoadAdmissao.sql" />
+    <Build Include="dim\Stored Procedures\spLoadDeficiencia.sql" />
+    <Build Include="dim\Stored Procedures\spLoadEscolaridadeCargoBasico.sql" />
+    <Build Include="dim\Stored Procedures\spLoadRaca.sql" />
+    <Build Include="dim\Stored Procedures\spLoadReferenciaCargoBasico.sql" />
+    <Build Include="dim\Stored Procedures\spLoadSecretariaPrefeitura.sql" />
+    <Build Include="dim\Stored Procedures\spLoadSetor.sql" />
+    <Build Include="dim\Stored Procedures\spLoadSexo.sql" />
+    <Build Include="dim\Stored Procedures\spLoadSubgrupo.sql" />
+    <Build Include="dim\Stored Procedures\spLoadSegmento.sql" />
+    <Build Include="dim\Stored Procedures\spLoadCargoComissionado.sql" />
+    <Build Include="dim\Stored Procedures\spLoadReferenciaCargoComissionado.sql" />
+    <Build Include="dim\Stored Procedures\spLoadEscolaridadeCargoComissionado.sql" />
+    <Build Include="dim\Stored Procedures\spLoadFuncionario.sql" />
+    <Build Include="fat\Stored Procedures\spLoadContratacao.sql" />
+    <Build Include="Security\dim.sql" />
+    <Build Include="Security\fat.sql" />
+    <Build Include="Security\ods.sql" />
+    <Build Include="Security\stg.sql" />
+  </ItemGroup>
+</Project>
