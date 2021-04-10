@@ -21,6 +21,7 @@
     CONSTRAINT [FK_Dim_Admissao] FOREIGN KEY ([IDAdmissao]) REFERENCES [dim].[Admissao] ([IDAdmissao]),
     CONSTRAINT [FK_Dim_CargoBasico] FOREIGN KEY ([IDCargoBasico]) REFERENCES [dim].[CargoBasico] ([IDCargo]),
     CONSTRAINT [FK_Dim_CargoComissionado] FOREIGN KEY ([IDCargoComissionado]) REFERENCES [dim].[CargoComissionado] ([IDCargoComissionado]),
+    CONSTRAINT [FK_Dim_Data] FOREIGN KEY ([IDData]) REFERENCES [dim].[Data] ([IDData]),
     CONSTRAINT [FK_Dim_Deficiencia] FOREIGN KEY ([IDDeficiencia]) REFERENCES [dim].[Deficiencia] ([IDDeficiencia]),
     CONSTRAINT [FK_Dim_EscolaridadeCargoBasico] FOREIGN KEY ([IDEscolaridadeCargoBasico]) REFERENCES [dim].[EscolaridadeCargoBasico] ([IDEscolaridade]),
     CONSTRAINT [FK_Dim_EscolaridadeCargoComissionado] FOREIGN KEY ([IDEscolaridadeCargoComissionado]) REFERENCES [dim].[EscolaridadeCargoComissionado] ([IDEscolaridadeComissionado]),
@@ -34,4 +35,6 @@
     CONSTRAINT [FK_Dim_Sexo] FOREIGN KEY ([IDSexo]) REFERENCES [dim].[Sexo] ([IDSexo]),
     CONSTRAINT [FK_Dim_Subgrupo] FOREIGN KEY ([IDSubgrupo]) REFERENCES [dim].[Subgrupo] ([IDSubGrupo])
 );
+
+
 

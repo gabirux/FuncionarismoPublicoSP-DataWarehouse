@@ -67,6 +67,8 @@
     <Folder Include="dim\Stored Procedures\" />
     <Folder Include="fat\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="ml\" />
+    <Folder Include="ml\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dim\Tables\Sexo.sql" />
@@ -107,5 +109,9 @@
     <Build Include="Security\fat.sql" />
     <Build Include="Security\ods.sql" />
     <Build Include="Security\stg.sql" />
+    <Build Include="ml\Tables\ClusterResultados.sql" />
+    <Build Include="Security\srv_app.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Security\ml.sql" />
   </ItemGroup>
 </Project>
